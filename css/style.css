@@ -149,3 +149,56 @@ body{
 .checkbox-terms .warning{
     margin-top: 10px;
 }
+
+
+
+.header-sucess{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-sucess h1{
+    font-size: 2.25em;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    margin: 50px auto;
+}
+
+.back-button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.back-button a{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 269px;
+    height: 177px;
+    background: #0DBDBD;
+    border-radius: 10px;
+    text-decoration: none;
+
+    color: #FFFFFF;
+    font-family: "Nunito",sans-serif;
+    font-size: 2.25em;
+    line-height: 18px;
+
+    cursor: pointer;
+    box-shadow: 0 2px 3px #666;
+}
+
+.back-button a:active{
+    transform: translateY(3px);
+}
+
+.invisible{
+    display:none;
+}
