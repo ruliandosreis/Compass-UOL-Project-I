@@ -192,7 +192,6 @@ body{
     line-height: 18px;
 
     cursor: pointer;
-    box-shadow: 0 2px 3px #666;
 }
 
 .back-button a:active{
