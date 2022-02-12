@@ -40,7 +40,7 @@ function isNameValid(){
 function isEmailValid(){
     const email = document.querySelector("#email");
     const emailWarning = document.getElementById("email-warning");
-    const emailRegex = /^[a-z0-9.]+@+[a-z0-9.]+$/;
+    const emailRegex = /^[a-z0-9.]+@+[a-z0-9. ]+$/;
 
     if(!emailRegex.test(email.value)) {
         emailWarning.classList.remove("invisible");
@@ -52,9 +52,9 @@ function isEmailValid(){
 function isPhoneValid(){
     const phone = document.querySelector("#phonenumber");
     const phoneWarning = document.getElementById("phone-warning");
-    const phoneRegex = /^[0-9]+$/;
+    const phoneRegex = /^[0-9() -]+$/;
 
-    if(phoneRegex.test(phone.value) && phone.value.length == 11){
+    if(phoneRegex.test(phone.value) && phone.value.length > 11){
         return true;
     }else{
         phoneWarning.classList.remove("invisible");
