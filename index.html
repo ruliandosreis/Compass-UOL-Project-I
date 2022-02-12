@@ -40,19 +40,19 @@
             
             <div class="input-field phone">
                 <label for="phonenumber">Phone</label>
-                <input type="tel" id="phonenumber" placeholder="(83) 00000-0000">
+                <input type="tel" id="phonenumber" placeholder="(83) 00000-0000" onkeypress="phoneMask(this)" maxlength="15">
                 <span class="warning invisible" id="phone-warning">Phone invalid</span>
             </div>
             
             <div class="input-field password">
                 <label for="password">Password *</label>
-                <input type="text" id="password">
+                <input type="password" id="password">
                 <span class="warning invisible" id="password-warning">Password invalid</span>
             </div>
             
             <div class="input-field birthday">
                 <label for="birthday">Birthday *</label>
-                <input type="datetime" id="birthday" placeholder="yyyy/mm/dd">
+                <input type="text" id="birthday" placeholder="yyyy/mm/dd" onkeyup="dateMask(this)" maxlength="10">
                 <span class="warning invisible">Age invalid</span>
             </div>
 
@@ -67,6 +67,7 @@
     </main>
 
     <script src="js/formValidation.js"></script>
+    <script src="js/masks.js"></script>
     
 </body>
 </html>
