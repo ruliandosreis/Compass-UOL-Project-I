@@ -85,5 +85,4 @@ function isPasswordValid(){
         password.value="";
         return false;
     }
-
 }
