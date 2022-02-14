@@ -7,6 +7,7 @@ form.addEventListener("submit", event =>{
     isPasswordValid();
     isPhoneValid();
 
+
     if(isChecked() == true && isNameValid() == true && isEmailValid() == true && isPasswordValid() == true && isPhoneValid() == true){
         location.href="sucesspage.html";
     }
@@ -15,24 +16,27 @@ form.addEventListener("submit", event =>{
 
 function isChecked(){
     const checkbox = document.querySelector("#checkmark");
+    const checkWarning = document.getElementById("check-warning");
     if(!checkbox.checked){
-        const checkWarning = document.getElementById("check-warning");
         checkWarning.classList.remove("invisible");
         return false;
     }
     else{
+        checkWarning.classList.add("invisible");
         return true;
     }
 }
 
 function isNameValid(){
     const name = document.querySelector("#full-name");
+    const nameWarning = document.getElementById("name-warning");
     if(name.value.length>4 && name.value.indexOf(" ")!=(-1)){
+        nameWarning.classList.add("invisible");
         return true;
     }
     else{
-        const nameWarning = document.getElementById("name-warning");
         nameWarning.classList.remove("invisible");
+        name.value="";
         return false;
     }
 }
@@ -44,9 +48,12 @@ function isEmailValid(){
 
     if(!emailRegex.test(email.value)) {
         emailWarning.classList.remove("invisible");
+        email.value="";
         return false;
+    }else{
+        emailWarning.classList.add("invisible");
+        return true;
     }
-    return true;
 }
 
 function isPhoneValid(){
@@ -55,12 +62,13 @@ function isPhoneValid(){
     const phoneRegex = /^[0-9() -]+$/;
 
     if(phoneRegex.test(phone.value) && phone.value.length > 11){
+        phoneWarning.classList.add("invisible");
         return true;
     }else{
         phoneWarning.classList.remove("invisible");
+        phone.value="";
         return false;
     }
-
 }
 
 function isPasswordValid(){
@@ -70,10 +78,11 @@ function isPasswordValid(){
     
 
     if(passwordRegex.test(password.value) && password.value.length>=6 && password.value.length<=9){
+        passwordWarning.classList.add("invisible");
         return true;
     }else{
         passwordWarning.classList.remove("invisible");
+        password.value="";
         return false;
     }
-
 }
