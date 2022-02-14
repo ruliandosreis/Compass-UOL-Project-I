@@ -69,7 +69,6 @@ function isPhoneValid(){
         phone.value="";
         return false;
     }
-
 }
 
 function isPasswordValid(){
